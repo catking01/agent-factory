@@ -11,8 +11,9 @@ import AgentPanel from './ui/AgentPanel'
 import TaskBoard from './ui/TaskBoard'
 import ArtifactPanel from './ui/ArtifactPanel'
 import LedgerPanel from './ui/LedgerPanel'
+import DebuggerPanel from './ui/DebuggerPanel'
 
-type TabId = 'dashboard' | 'orders' | 'workshops' | 'agents' | 'tasks' | 'artifacts' | 'ledger'
+type TabId = 'dashboard' | 'orders' | 'workshops' | 'agents' | 'tasks' | 'artifacts' | 'ledger' | 'debugger'
 
 export default function App() {
   const [state, setState] = useState<GameState>(() => createInitialState(42))
@@ -81,6 +82,7 @@ export default function App() {
     { id: 'tasks', label: 'Tasks' },
     { id: 'artifacts', label: 'Artifacts' },
     { id: 'ledger', label: 'Ledger' },
+    { id: 'debugger', label: 'Debugger' },
   ]
 
   return (
@@ -170,6 +172,7 @@ export default function App() {
       )}
       {activeTab === 'artifacts' && <ArtifactPanel state={state} />}
       {activeTab === 'ledger' && <LedgerPanel state={state} />}
+      {activeTab === 'debugger' && <DebuggerPanel state={state} />}
     </div>
   )
 }
