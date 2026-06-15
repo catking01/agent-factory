@@ -1,0 +1,9 @@
+{
+  "min": 10696,
+  "max": 24708,
+  "mean": 18009.916666666668,
+  "median": 17982,
+  "totalCalls": 24,
+  "failedCalls": 0,
+  "model": "qwen2.5-coder:14b"
+}

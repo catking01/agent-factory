@@ -1,0 +1,290 @@
+[
+  {
+    "id": "C01",
+    "category": "clean_high_evidence",
+    "description": "Perfect artifact, everything matches",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "C02",
+    "category": "clean_high_evidence",
+    "description": "High quality web app, evidence-backed",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "C03",
+    "category": "clean_high_evidence",
+    "description": "Research paper summary, strong evidence",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "C04",
+    "category": "clean_high_evidence",
+    "description": "Data cleaning plan, clean execution",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "O01",
+    "category": "obvious_overclaim",
+    "description": "Huge overclaim: claim=10, evidence=1",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "O02",
+    "category": "obvious_overclaim",
+    "description": "API spec with inflated claims",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "O03",
+    "category": "obvious_overclaim",
+    "description": "Research comparison with fake evidence",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "O04",
+    "category": "obvious_overclaim",
+    "description": "Dashboard spec claiming full coverage",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "E01",
+    "category": "evidence_gap",
+    "description": "Claim exceeds evidence by large margin",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "E02",
+    "category": "evidence_gap",
+    "description": "Moderate overclaim, evidence is thin",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "E03",
+    "category": "evidence_gap",
+    "description": "Data validation report with weak backing",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "E04",
+    "category": "evidence_gap",
+    "description": "Runtime contract with insufficient evidence",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "H01",
+    "category": "hidden_failure",
+    "description": "3 routes, 2 failed, best artifact selected",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": true,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "H02",
+    "category": "hidden_failure",
+    "description": "Multi-route competition with hidden losers",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": true,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "H03",
+    "category": "hidden_failure",
+    "description": "Overclaim + hidden failures combined",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": true,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": true,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "H04",
+    "category": "hidden_failure",
+    "description": "Single route — no hidden failures to flag",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "L01",
+    "category": "low_quality",
+    "description": "Low quality artifact despite matched evidence",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "L02",
+    "category": "low_quality",
+    "description": "Very low quality, many defects",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "high"
+    }
+  },
+  {
+    "id": "L03",
+    "category": "low_quality",
+    "description": "Low quality data work",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "B01",
+    "category": "borderline",
+    "description": "Gap=1.5 — borderline overclaim",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "B02",
+    "category": "borderline",
+    "description": "Gap=2 — mild but noticeable",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "B03",
+    "category": "borderline",
+    "description": "Gap=3 — moderate risk, low complexity",
+    "expected": {
+      "semanticPass": false,
+      "overclaimDetected": false,
+      "evidenceGapDetected": true,
+      "hiddenFailureConcern": false,
+      "riskLevel": "medium"
+    }
+  },
+  {
+    "id": "F01",
+    "category": "false_positive_trap",
+    "description": "High complexity task, good evidence",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  },
+  {
+    "id": "F02",
+    "category": "false_positive_trap",
+    "description": "Runtime order — complex but well-executed",
+    "expected": {
+      "semanticPass": true,
+      "overclaimDetected": false,
+      "evidenceGapDetected": false,
+      "hiddenFailureConcern": false,
+      "riskLevel": "low"
+    }
+  }
+]

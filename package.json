@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ollama": "AGENT_FOUNDRY_ENABLE_OLLAMA=1 vitest run tests/ai/ollamaClient.optin.test.ts"
+    "test:ollama": "AGENT_FOUNDRY_ENABLE_OLLAMA=1 vitest run tests/ai/ollamaClient.optin.test.ts",
+    "test:shadow-benchmark": "AGENT_FOUNDRY_ENABLE_OLLAMA=1 vitest run tests/ai/shadowAuditBenchmark.optin.test.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
