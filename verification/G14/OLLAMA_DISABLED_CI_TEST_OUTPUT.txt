@@ -1,0 +1,47 @@
+
+ RUN  v2.1.9 /Users/catking/Desktop/《群智工坊：Agent Foundry》/agent-foundry
+
+ ✓ tests/ai/ollamaClient.optin.test.ts (5 tests | 4 skipped) 1ms
+ ✓ tests/sim/parallelRoutes.test.ts (4 tests) 2ms
+ ✓ tests/sim/parallelDelivery.test.ts (3 tests) 2ms
+ ✓ tests/sim/replay.test.ts (7 tests) 10ms
+ ✓ tests/sim/auditHandoff.test.ts (4 tests) 36ms
+ ✓ tests/sim/strategyScenarios.test.ts (9 tests) 17ms
+ ✓ tests/sim/orderFlow.test.ts (5 tests) 6ms
+ ✓ tests/sim/validation.test.ts (9 tests) 4ms
+ ✓ tests/sim/gameplayPressure.test.ts (8 tests) 193ms
+ ✓ tests/sim/balanceTuningRegression.test.ts (8 tests) 225ms
+ ✓ tests/sim/explainRun.test.ts (7 tests) 125ms
+ ✓ tests/sim/audit.test.ts (7 tests) 2ms
+ ✓ tests/sim/pipelineClosure.test.ts (5 tests) 60ms
+ ✓ tests/ai/promptBuilder.test.ts (5 tests) 3ms
+ ✓ tests/sim/manualAudit.test.ts (4 tests) 3ms
+ ✓ tests/sim/ledgerAggregation.test.ts (5 tests) 236ms
+ ✓ tests/sim/failureAttribution.test.ts (7 tests) 269ms
+ ✓ tests/sim/economyBalance.test.ts (6 tests) 9ms
+ ✓ tests/ai/shadowAuditSchema.test.ts (6 tests) 4ms
+ ✓ tests/sim/g12ReportConsistency.test.ts (5 tests) 517ms
+   ✓ G12 Report Consistency > two independent report generations produce identical results 337ms
+ ✓ tests/sim/attributionReason.test.ts (4 tests) 183ms
+ ✓ tests/sim/tick.test.ts (6 tests) 12ms
+ ✓ tests/sim/explanationConsistency.test.ts (6 tests) 381ms
+ ✓ tests/sim/rng.test.ts (8 tests) 14ms
+ ✓ tests/sim/rawRunEvidence.test.ts (4 tests) 1481ms
+   ✓ Raw Run Evidence > aggregates recomputed from raw runs match balance runner 784ms
+   ✓ Raw Run Evidence > game-over rate recomputed from raw runs matches aggregate 693ms
+ ✓ tests/sim/longRunBalanceTuning.test.ts (7 tests) 21ms
+ ✓ tests/sim/balanceExport.test.ts (5 tests) 2313ms
+   ✓ Balance Export > full balance export includes all sections 1035ms
+   ✓ Balance Export > full balance export is valid JSON when serialized 1274ms
+ ✓ tests/sim/strategyDominance.test.ts (6 tests) 3ms
+ ✓ tests/sim/hardDominanceGate.test.ts (8 tests) 5ms
+ ✓ tests/sim/longRunStability.test.ts (7 tests) 2ms
+ ✓ tests/sim/multiSeedBalance.test.ts (5 tests) 546ms
+   ✓ Multi-Seed Balance > all strategies produce valid metrics across all seeds at horizon 60 467ms
+ ✓ tests/sim/tradeoffPreservation.test.ts (8 tests) 2ms
+
+ Test Files  32 passed (32)
+      Tests  189 passed | 4 skipped (193)
+   Start at  10:48:23
+   Duration  5.63s (transform 349ms, setup 0ms, collect 26.44s, tests 6.68s, environment 3ms, prepare 1.44s)
+

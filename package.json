@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:ollama": "AGENT_FOUNDRY_ENABLE_OLLAMA=1 vitest run tests/ai/ollamaClient.optin.test.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -16,6 +17,7 @@
     "recharts": "^3.8.1"
   },
   "devDependencies": {
+    "@types/node": "^25.9.3",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
