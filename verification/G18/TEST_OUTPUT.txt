@@ -1,0 +1,54 @@
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/Users/catking/Desktop/《群智工坊：Agent Foundry》/agent-foundry[39m
+
+ [32m✓[39m tests/ai/shadowAuditCalibration.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/ai/ollamaClient.optin.test.ts [2m([22m[2m5 tests[22m[2m | [22m[33m4 skipped[39m[2m)[22m[90m 2[2mms[22m[39m
+ [32m✓[39m tests/sim/parallelRoutes.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/sim/parallelDelivery.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/sim/replay.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 25[2mms[22m[39m
+ [32m✓[39m tests/sim/orderFlow.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 18[2mms[22m[39m
+ [32m✓[39m tests/sim/auditHandoff.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 86[2mms[22m[39m
+ [32m✓[39m tests/sim/strategyScenarios.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 57[2mms[22m[39m
+ [32m✓[39m tests/sim/validation.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32m✓[39m tests/sim/gameplayPressure.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 315[2mms[22m[39m
+ [32m✓[39m tests/sim/balanceTuningRegression.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 396[2mms[22m[39m
+ [32m✓[39m tests/sim/audit.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32m✓[39m tests/sim/explainRun.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 109[2mms[22m[39m
+ [32m✓[39m tests/ai/promptBuilder.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/sim/pipelineClosure.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 224[2mms[22m[39m
+ [32m✓[39m tests/sim/manualAudit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/ai/shadowAuditBenchmark.optin.test.ts [2m([22m[2m9 tests[22m[2m | [22m[33m8 skipped[39m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/ai/shadowAuditBenchmarkFixtures.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 39[2mms[22m[39m
+ [32m✓[39m tests/sim/ledgerAggregation.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 609[2mms[22m[39m
+   [33m[2m✓[22m[39m Ledger Aggregation[2m > [22mdifferent strategies produce different event profiles [33m393[2mms[22m[39m
+ [32m✓[39m tests/sim/failureAttribution.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 669[2mms[22m[39m
+ [32m✓[39m tests/sim/economyBalance.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32m✓[39m tests/ai/shadowAuditSchema.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/sim/attributionReason.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 410[2mms[22m[39m
+   [33m[2m✓[22m[39m Attribution Reason Hygiene[2m > [22mno reputation penalty uses AGENT_ASSIGNED as reason [33m354[2mms[22m[39m
+ [32m✓[39m tests/sim/g12ReportConsistency.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1011[2mms[22m[39m
+   [33m[2m✓[22m[39m G12 Report Consistency[2m > [22mtwo independent report generations produce identical results [33m572[2mms[22m[39m
+ [32m✓[39m tests/sim/tick.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 12[2mms[22m[39m
+ [32m✓[39m tests/sim/explanationConsistency.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 902[2mms[22m[39m
+   [33m[2m✓[22m[39m Explanation Consistency[2m > [22mall 4 strategy explanations at seed=42 have valid attribution [33m399[2mms[22m[39m
+ [32m✓[39m tests/sim/rng.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 25[2mms[22m[39m
+ [32m✓[39m tests/sim/longRunBalanceTuning.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/sim/rawRunEvidence.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2766[2mms[22m[39m
+   [33m[2m✓[22m[39m Raw Run Evidence[2m > [22maggregates recomputed from raw runs match balance runner [33m1512[2mms[22m[39m
+   [33m[2m✓[22m[39m Raw Run Evidence[2m > [22mgame-over rate recomputed from raw runs matches aggregate [33m1246[2mms[22m[39m
+ [32m✓[39m tests/ui/ShadowAdvisoryPanel.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[90m 185[2mms[22m[39m
+ [32m✓[39m tests/sim/balanceExport.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 3158[2mms[22m[39m
+   [33m[2m✓[22m[39m Balance Export[2m > [22mfull balance export includes all sections [33m1837[2mms[22m[39m
+   [33m[2m✓[22m[39m Balance Export[2m > [22mfull balance export is valid JSON when serialized [33m1310[2mms[22m[39m
+ [32m✓[39m tests/sim/strategyDominance.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/sim/longRunStability.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/sim/hardDominanceGate.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/sim/multiSeedBalance.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 690[2mms[22m[39m
+   [33m[2m✓[22m[39m Multi-Seed Balance[2m > [22mall strategies produce valid metrics across all seeds at horizon 60 [33m567[2mms[22m[39m
+ [32m✓[39m tests/sim/tradeoffPreservation.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m36 passed[39m[22m[90m (36)[39m
+[2m      Tests [22m [1m[32m222 passed[39m[22m[2m | [22m[33m12 skipped[39m[90m (234)[39m
+[2m   Start at [22m 20:19:46
+[2m   Duration [22m 9.14s[2m (transform 900ms, setup 0ms, collect 43.84s, tests 11.79s, environment 1.16s, prepare 3.75s)[22m
+

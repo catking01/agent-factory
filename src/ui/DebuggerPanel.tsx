@@ -6,6 +6,8 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, Legend,
 } from 'recharts'
+import ShadowAdvisoryPanel from './ShadowAdvisoryPanel'
+import type { CalibratedShadowAudit } from '../ai/shadowAuditCalibration'
 
 interface Props {
   state: GameState
@@ -190,6 +192,9 @@ export default function DebuggerPanel({ state }: Props) {
               </div>
             </div>
           </div>
+
+          {/* Shadow Advisory (sample — does not call Ollama) */}
+          <ShadowAdvisorySample />
         </>
       )}
     </div>
@@ -395,5 +400,72 @@ function TrustTimeline({ exp }: { exp: RunExplanation }) {
         />
       </LineChart>
     </ResponsiveContainer>
+  )
+}
+
+// ============================================================
+// Shadow Advisory Sample (no Ollama — static example data)
+// ============================================================
+
+const SAMPLE_OVERCLAIM_ADVISORY: CalibratedShadowAudit = {
+  advisoryLevel: 'critical',
+  primaryIssue: 'overclaim',
+  secondaryIssues: ['evidence_gap', 'quality'],
+  shouldBlockDelivery: false,
+  shouldRequestHumanReview: true,
+  falsePositiveRisk: 'low',
+  explanation:
+    'Shadow audit: The artifact significantly overclaims its capabilities. ' +
+    'Advisory: critical, primary=overclaim. Also flagged: evidence_gap, quality. ' +
+    'Recommendation: human review suggested.',
+  modelConfidence: 8,
+  callSucceeded: true,
+  model: 'qwen2.5-coder:14b',
+}
+
+const SAMPLE_CLEAN_ADVISORY: CalibratedShadowAudit = {
+  advisoryLevel: 'info',
+  primaryIssue: 'clean',
+  secondaryIssues: [],
+  shouldBlockDelivery: false,
+  shouldRequestHumanReview: false,
+  falsePositiveRisk: 'low',
+  explanation:
+    'Shadow audit: The artifact meets the criteria with strong evidence. ' +
+    'Advisory: info, primary=clean.',
+  modelConfidence: 9,
+  callSucceeded: true,
+  model: 'qwen2.5-coder:14b',
+}
+
+function ShadowAdvisorySample() {
+  const [showSample, setShowSample] = useState(false)
+  const [sampleType, setSampleType] = useState<'overclaim' | 'clean'>('overclaim')
+
+  const sample = sampleType === 'overclaim' ? SAMPLE_OVERCLAIM_ADVISORY : SAMPLE_CLEAN_ADVISORY
+
+  return (
+    <div style={{ marginTop: 12 }}>
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
+        <button className="small" onClick={() => setShowSample(!showSample)}>
+          {showSample ? 'Hide' : 'Show'} Shadow Advisory (sample)
+        </button>
+        {showSample && (
+          <select
+            value={sampleType}
+            onChange={(e) => setSampleType(e.target.value as 'overclaim' | 'clean')}
+            style={{
+              background: 'var(--bg-card)', color: 'var(--text)',
+              border: '1px solid var(--border)', borderRadius: 4,
+              padding: '3px 8px', fontSize: 11,
+            }}
+          >
+            <option value="overclaim">Overclaim sample</option>
+            <option value="clean">Clean sample</option>
+          </select>
+        )}
+      </div>
+      {showSample && <ShadowAdvisoryPanel advisory={sample} />}
+    </div>
   )
 }
