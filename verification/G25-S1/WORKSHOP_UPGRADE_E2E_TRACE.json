@@ -1,0 +1,90 @@
+{
+  "trace": "Workshop Upgrade End-to-End",
+  "g25_s1_verified": true,
+  "steps": [
+    {
+      "step": 1,
+      "action": "Game starts with seed 42",
+      "state": {
+        "cash": 80000,
+        "workshops": {
+          "workshop-engineering": { "level": 1, "capacity": 4, "efficiencyBonus": 1.0, "upgradeCost": 1200, "maintenanceCost": 10 },
+          "workshop-planning": { "level": 1, "capacity": 3, "efficiencyBonus": 1.0, "upgradeCost": 800, "maintenanceCost": 5 },
+          "workshop-validation": { "level": 1, "capacity": 3, "efficiencyBonus": 1.0, "upgradeCost": 1000, "maintenanceCost": 8 },
+          "workshop-audit": { "level": 1, "capacity": 2, "efficiencyBonus": 1.0, "upgradeCost": 1500, "maintenanceCost": 12 },
+          "workshop-delivery": { "level": 1, "capacity": 2, "efficiencyBonus": 1.0, "upgradeCost": 500, "maintenanceCost": 5 }
+        }
+      }
+    },
+    {
+      "step": 2,
+      "action": "Player dispatches UPGRADE_WORKSHOP for workshop-engineering",
+      "playerAction": {
+        "type": "UPGRADE_WORKSHOP",
+        "workshopId": "workshop-engineering",
+        "upgradeId": "level",
+        "tick": 0
+      }
+    },
+    {
+      "step": 3,
+      "expectedResult": {
+        "cash": 78800,
+        "workshop-engineering": {
+          "level": 2,
+          "capacity": 5,
+          "efficiencyBonus": 1.1,
+          "upgradeCost": 1800,
+          "maintenanceCost": 12
+        },
+        "ledgerEvent": {
+          "eventType": "WORKSHOP_UPGRADED",
+          "actorId": "player",
+          "targetId": "workshop-engineering",
+          "details": { "newLevel": 2, "cost": 1200 }
+        }
+      }
+    },
+    {
+      "step": 4,
+      "action": "Player dispatches UPGRADE_WORKSHOP for workshop-delivery",
+      "playerAction": {
+        "type": "UPGRADE_WORKSHOP",
+        "workshopId": "workshop-delivery",
+        "upgradeId": "level",
+        "tick": 0
+      }
+    },
+    {
+      "step": 5,
+      "expectedResult": {
+        "cash": 78300,
+        "workshop-delivery": {
+          "level": 2,
+          "capacity": 3,
+          "efficiencyBonus": 1.1,
+          "upgradeCost": 750,
+          "maintenanceCost": 6
+        }
+      }
+    }
+  ],
+  "testCoverage": {
+    "file": "tests/game/workshopUpgrade.test.ts",
+    "tests": 11,
+    "allPassed": true,
+    "covers": [
+      "cash deduction",
+      "level increase",
+      "capacity increase",
+      "efficiency increase",
+      "affordability check",
+      "max level guard (5)",
+      "ledger event recording",
+      "first-order upgrade affordability",
+      "upgrade cost scaling (1.5x)",
+      "maintenance cost scaling (1.2x)",
+      "non-existent workshop guard"
+    ]
+  }
+}

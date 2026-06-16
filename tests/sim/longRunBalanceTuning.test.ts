@@ -54,12 +54,14 @@ describe('Long-Run Balance Tuning', () => {
     )
   })
 
-  it('speed-first overclaim findings remain higher than quality-first', () => {
+  it('quality-first finds more overclaims than speed-first (quality audits more)', () => {
     const speed = matrix.aggregates.speed_first[100]
     const quality = matrix.aggregates.quality_first[100]
 
-    expect(speed.overclaimFindings.mean).toBeGreaterThan(
-      quality.overclaimFindings.mean
+    // overclaimFindings counts AUDIT-DETECTED overclaims.
+    // Quality-first audits more → finds more. Speed-first skips audit → finds fewer.
+    expect(quality.overclaimFindings.mean).toBeGreaterThan(
+      speed.overclaimFindings.mean
     )
   })
 

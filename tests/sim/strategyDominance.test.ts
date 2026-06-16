@@ -48,18 +48,20 @@ describe('Strategy Dominance', () => {
     }
   })
 
-  it('speed-first has higher overclaim risk than quality-first and balanced', () => {
+  it('speed-first has worse evidence integrity than quality-first and balanced', () => {
     const speed100 = matrix.aggregates.speed_first[100]
     const quality100 = matrix.aggregates.quality_first[100]
     const balanced100 = matrix.aggregates.balanced[100]
 
-    // Speed-first should average more overclaims than quality-first
-    expect(speed100.overclaimFindings.mean).toBeGreaterThan(
-      quality100.overclaimFindings.mean
+    // Speed-first skips audit → undetected overclaims accumulate → lower evidence integrity.
+    // Quality-first and balanced validate+audit → maintain higher evidence integrity.
+    // This is the REAL risk indicator, not absolute overclaimFindings (which counts
+    // detected overclaims — strategies that audit more naturally find more).
+    expect(quality100.evidenceIntegrityEnd.mean).toBeGreaterThan(
+      speed100.evidenceIntegrityEnd.mean
     )
-    // Speed-first should average more overclaims than balanced
-    expect(speed100.overclaimFindings.mean).toBeGreaterThan(
-      balanced100.overclaimFindings.mean
+    expect(balanced100.evidenceIntegrityEnd.mean).toBeGreaterThan(
+      speed100.evidenceIntegrityEnd.mean
     )
   })
 

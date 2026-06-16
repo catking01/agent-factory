@@ -1,0 +1,16 @@
+{
+  "trace": "First Upgrade Affordability After First Order",
+  "g25_s1_verified": true,
+  "setup": {
+    "startingCash": 80000,
+    "cheapestUpgrade": { "workshop": "workshop-delivery", "cost": 500 },
+    "secondCheapest": { "workshop": "workshop-planning", "cost": 800 },
+    "firstOrderReward": 2100,
+    "firstOrderId": "order-landing-page"
+  },
+  "verdict": "Player can afford at least one upgrade immediately from starting cash (80000 > 500). After first order delivery, cash increases further. No blocker to first upgrade.",
+  "affordabilityCheck": {
+    "immediateUpgrades": ["workshop-delivery ($500)", "workshop-planning ($800)", "workshop-validation ($1000)", "workshop-engineering ($1200)", "workshop-audit ($1500)"],
+    "allAffordableFromStart": true
+  }
+}

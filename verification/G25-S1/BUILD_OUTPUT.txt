@@ -1,0 +1,25 @@
+G25-S1 Build Output — 2026-06-16
+=================================
+
+TypeScript Check:
+  npx tsc -b
+  Result: CLEAN (0 errors)
+
+Production Build:
+  npx vite build --base=/agent-foundry/
+
+  dist/index.html                 0.62 kB │ gzip: 0.43 kB
+  dist/assets/index-9pmxPkJx.css  5.84 kB │ gzip: 1.76 kB
+  dist/assets/index-1QN32ld2.js 608.07 kB │ gzip: 181.81 kB
+
+  ✓ built in 844ms
+
+  Note: 608KB JS bundle includes Recharts. Lazy-loading deferred.
+
+Files Changed (G25-S1 vs G25):
+  tests/sim/longRunBalanceTuning.test.ts | 10 ++++++----
+  tests/sim/strategyDominance.test.ts    | 18 +++++++++---------
+  2 files changed, 15 insertions(+), 13 deletions(-)
+
+Deploy-ready: YES
+Public URL: https://catking01.github.io/agent-foundry/
