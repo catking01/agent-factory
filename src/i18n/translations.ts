@@ -141,6 +141,97 @@ export const translations = {
 
   // Language
   language: { zh: '语言', en: 'Language' },
+
+  // Order status
+  status: { zh: '状态', en: 'Status' },
+  availableStatus: { zh: '可接', en: 'available' },
+  acceptedStatus: { zh: '已接', en: 'accepted' },
+  inProgressStatus: { zh: '进行中', en: 'in_progress' },
+  deliveredStatus: { zh: '已交付', en: 'delivered' },
+  failedStatus: { zh: '失败', en: 'failed' },
+  criteria: { zh: '条件', en: 'Criteria' },
+  complexity: { zh: '复杂度', en: 'Complexity' },
+  risk: { zh: '风险', en: 'Risk' },
+  ambiguity: { zh: '模糊度', en: 'Ambiguity' },
+  deadline: { zh: '截止', en: 'Deadline' },
+  overdue: { zh: '逾期', en: 'Overdue' },
+  left: { zh: '剩余', en: 'left' },
+  reward: { zh: '奖励', en: 'Reward' },
+  noOrders: { zh: '暂无订单', en: 'No orders' },
+
+  // Agent properties
+  role: { zh: '角色', en: 'Role' },
+  planner: { zh: '规划师', en: 'planner' },
+  engineer: { zh: '工程师', en: 'engineer' },
+  validator: { zh: '验证师', en: 'validator' },
+  auditor: { zh: '审计师', en: 'auditor' },
+  generalist: { zh: '通才', en: 'generalist' },
+  planning: { zh: '规划', en: 'Planning' },
+  coding: { zh: '编程', en: 'Coding' },
+  validation: { zh: '验证', en: 'Validation' },
+  auditing: { zh: '审计', en: 'Auditing' },
+  creativity: { zh: '创造力', en: 'Creativity' },
+  reliability: { zh: '可靠性', en: 'Reliability' },
+  speed: { zh: '速度', en: 'Speed' },
+  overclaimRisk: { zh: '吹牛风险', en: 'Overclaim Risk' },
+  fatigue: { zh: '疲劳', en: 'Fatigue' },
+  idleStatus: { zh: '空闲', en: 'idle' },
+  workingStatus: { zh: '工作中', en: 'working' },
+  fatiguedStatus: { zh: '疲劳', en: 'fatigued' },
+  currentTask: { zh: '当前任务', en: 'Task' },
+
+  // Task stages
+  queued: { zh: '排队中', en: 'queued' },
+  in_progress: { zh: '进行中', en: 'in_progress' },
+  completedStatus: { zh: '已完成', en: 'completed' },
+  noAgents: { zh: '无分配员工', en: 'No agents' },
+  assign: { zh: '分配', en: 'Assign' },
+  remaining: { zh: '剩余', en: 'Remaining' },
+  by: { zh: '制作者', en: 'By' },
+
+  // Artifacts
+  noArtifacts: { zh: '暂无产出物。分配员工到任务以生成产出物。', en: 'No artifacts yet. Assign agents to tasks to generate artifacts.' },
+  kind: { zh: '类型', en: 'Kind' },
+  defects: { zh: '缺陷', en: 'Defects' },
+  claim: { zh: '声明', en: 'Claim' },
+  evidence2: { zh: '证据', en: 'Evidence' },
+  overclaimGap: { zh: '吹牛差距', en: 'Overclaim Gap' },
+  pending: { zh: '待处理', en: 'Pending' },
+
+  // Audit results
+  pass: { zh: '通过', en: 'PASS' },
+  fail: { zh: '失败', en: 'FAIL' },
+
+  // Workshop
+  capacity: { zh: '容量', en: 'Capacity' },
+  currentLoad: { zh: '当前负载', en: 'Current Load' },
+
+  // Event types
+  eventType: { zh: '事件类型', en: 'Event Type' },
+  count: { zh: '次数', en: 'Count' },
+  actor: { zh: '执行者', en: 'actor' },
+  target: { zh: '目标', en: 'target' },
+  noEvents: { zh: '暂无事件。推进模拟以生成事件。', en: 'No events yet. Advance the simulation to generate events.' },
+
+  // Debugger internal labels
+  category: { zh: '类别', en: 'Category' },
+  amount: { zh: '金额', en: 'Amount' },
+  maxQueue: { zh: '最大排队', en: 'Max queue' },
+  noCriticalArtifacts: { zh: '无关键产出物。', en: 'No critical artifacts.' },
+  noNegativeEvents: { zh: '无负面事件。', en: 'No negative events recorded.' },
+  noTrustChanges: { zh: '无信任指标变化记录。', en: 'No trust metric changes recorded.' },
+
+  // Filter
+  filter: { zh: '筛选', en: 'Filter' },
+  all: { zh: '全部', en: 'All' },
+  recent: { zh: '最近', en: 'Recent' },
+
+  // Misc
+  pending2: { zh: '待处理', en: 'Pending' },
+  total: { zh: '总计', en: 'Total' },
+  active2: { zh: '活跃', en: 'active' },
+  queued2: { zh: '排队', en: 'queued' },
+  agentsAvailable: { zh: '个员工可用', en: 'agents available' },
 } as const
 
 export type TranslationKey = keyof typeof translations

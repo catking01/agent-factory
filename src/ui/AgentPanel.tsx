@@ -1,9 +1,17 @@
 import React from 'react'
 import type { GameState, Agent } from '../sim/types'
+import { useLang } from '../i18n/LanguageContext'
+import type { TranslationKey } from '../i18n/translations'
 
-interface Props {
-  state: GameState
+const ROLE_MAP: Record<string, TranslationKey> = {
+  planner: 'planner', engineer: 'engineer', validator: 'validator',
+  auditor: 'auditor', generalist: 'generalist',
 }
+const STATUS_MAP: Record<string, TranslationKey> = {
+  idle: 'idleStatus', working: 'workingStatus', fatigued: 'fatiguedStatus',
+}
+
+interface Props { state: GameState }
 
 export default function AgentPanel({ state }: Props) {
   const agents = Object.values(state.agents)
@@ -20,6 +28,7 @@ export default function AgentPanel({ state }: Props) {
 }
 
 function AgentCard({ agent }: { agent: Agent }) {
+  const { t } = useLang()
   const statusColor =
     agent.status === 'working'
       ? 'var(--accent-bright)'
@@ -47,12 +56,12 @@ function AgentCard({ agent }: { agent: Agent }) {
             color: '#fff',
           }}
         >
-          {agent.status}
+          {t(STATUS_MAP[agent.status] || 'idleStatus')}
         </span>
       </div>
 
       <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 2 }}>
-        {agent.role} · ${agent.salaryPerTick}/tick
+        {t(ROLE_MAP[agent.role] || 'generalist')} · ${agent.salaryPerTick}/tick
       </div>
 
       {/* Specializations */}
@@ -66,19 +75,19 @@ function AgentCard({ agent }: { agent: Agent }) {
 
       {/* Skill bars */}
       <div style={{ marginTop: 8 }}>
-        <SkillBar label="Planning" value={agent.planning} />
-        <SkillBar label="Coding" value={agent.coding} />
-        <SkillBar label="Validation" value={agent.validation} />
-        <SkillBar label="Auditing" value={agent.auditing} />
-        <SkillBar label="Creativity" value={agent.creativity} />
-        <SkillBar label="Reliability" value={agent.reliability} />
-        <SkillBar label="Speed" value={agent.speed} />
+        <SkillBar label={t('planning')} value={agent.planning} />
+        <SkillBar label={t('coding')} value={agent.coding} />
+        <SkillBar label={t('validation')} value={agent.validation} />
+        <SkillBar label={t('auditing')} value={agent.auditing} />
+        <SkillBar label={t('creativity')} value={agent.creativity} />
+        <SkillBar label={t('reliability')} value={agent.reliability} />
+        <SkillBar label={t('speed')} value={agent.speed} />
       </div>
 
       {/* Risk indicators */}
       <div style={{ marginTop: 8, display: 'flex', gap: 12, fontSize: 11 }}>
         <div>
-          <span style={{ color: 'var(--text-dim)' }}>Overclaim: </span>
+          <span style={{ color: 'var(--text-dim)' }}>{t('overclaimRisk')}: </span>
           <span
             style={{
               color:
@@ -93,7 +102,7 @@ function AgentCard({ agent }: { agent: Agent }) {
           </span>
         </div>
         <div>
-          <span style={{ color: 'var(--text-dim)' }}>Fatigue: </span>
+          <span style={{ color: 'var(--text-dim)' }}>{t('fatigue')}: </span>
           <span style={{ color: fatigueColor }}>
             {agent.fatigue.toFixed(1)}/10
           </span>
@@ -119,7 +128,7 @@ function AgentCard({ agent }: { agent: Agent }) {
             color: 'var(--accent)',
           }}
         >
-          Task: {agent.currentTaskId.split('-').slice(0, 4).join('-')}
+          {t('currentTask')}: {agent.currentTaskId.split('-').slice(0, 4).join('-')}
         </div>
       )}
     </div>
