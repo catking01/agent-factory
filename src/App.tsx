@@ -17,15 +17,22 @@ import TutorialChecklist, {
   isTutorialDismissed,
   dismissTutorial,
 } from './ui/TutorialChecklist'
+import OnboardingOverlay from './ui/OnboardingOverlay'
 import { useLang } from './i18n/LanguageContext'
 
 type TabId = 'dashboard' | 'orders' | 'workshops' | 'agents' | 'tasks' | 'artifacts' | 'ledger' | 'debugger'
 
+const ONBOARDING_KEY = 'agent-foundry-onboarding-done'
+
 export default function App() {
   const { t, lang, toggleLang } = useLang()
   const [state, setState] = useState<GameState>(() => createInitialState(42))
+  const [onboardingDone, setOnboardingDone] = useState(() => {
+    try { return localStorage.getItem(ONBOARDING_KEY) === 'true' } catch { return false }
+  })
+  const [showOnboarding, setShowOnboarding] = useState(!onboardingDone)
   const [tutorialDismissed, setTutorialDismissed] = useState(() =>
-    isTutorialDismissed(),
+    isTutorialDismissed() || onboardingDone,
   )
   const [activeTab, setActiveTab] = useState<TabId>('dashboard')
   const [autoRun, setAutoRun] = useState(false)
@@ -190,15 +197,36 @@ export default function App() {
       {/* Global floating HUD — always visible, read-only */}
       <AgentWorkStatusFloat state={state} />
 
-      {/* First-run tutorial checklist */}
-      <TutorialChecklist
-        state={state}
-        dismissed={tutorialDismissed}
-        onDismiss={() => {
-          dismissTutorial()
-          setTutorialDismissed(true)
-        }}
-      />
+      {/* Concept onboarding overlay */}
+      {showOnboarding && (
+        <OnboardingOverlay
+          onStart={() => {
+            setShowOnboarding(false)
+            setTutorialDismissed(false)
+          }}
+          onSkip={() => {
+            setShowOnboarding(false)
+            setTutorialDismissed(true)
+            dismissTutorial()
+            try { localStorage.setItem(ONBOARDING_KEY, 'true') } catch {}
+            setOnboardingDone(true)
+          }}
+        />
+      )}
+
+      {/* First-run tutorial checklist (shown after onboarding concept intro) */}
+      {!showOnboarding && (
+        <TutorialChecklist
+          state={state}
+          dismissed={tutorialDismissed}
+          onDismiss={() => {
+            dismissTutorial()
+            setTutorialDismissed(true)
+            try { localStorage.setItem(ONBOARDING_KEY, 'true') } catch {}
+            setOnboardingDone(true)
+          }}
+        />
+      )}
     </div>
   )
 }
