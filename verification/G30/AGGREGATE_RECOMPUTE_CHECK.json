@@ -1,0 +1,106 @@
+{
+  "source": "verification/G30/ORG_POLICY_SEARCH_MATRIX.json",
+  "checks": [
+    {
+      "name": "run count matches expected G30 policy matrix",
+      "passed": true,
+      "expected": 288,
+      "actual": 288
+    },
+    {
+      "name": "all policies covered",
+      "passed": true,
+      "expected": [
+        "audit_heavy",
+        "balanced_org",
+        "baseline_hierarchical",
+        "extra_lead",
+        "extra_worker",
+        "handoff_optimized",
+        "high_fanout",
+        "low_coordination",
+        "merge_optimized",
+        "quality_hierarchy",
+        "risk_averse_org",
+        "speed_flat_like"
+      ],
+      "actual": [
+        "audit_heavy",
+        "balanced_org",
+        "baseline_hierarchical",
+        "extra_lead",
+        "extra_worker",
+        "handoff_optimized",
+        "high_fanout",
+        "low_coordination",
+        "merge_optimized",
+        "quality_hierarchy",
+        "risk_averse_org",
+        "speed_flat_like"
+      ]
+    },
+    {
+      "name": "all seeds covered",
+      "passed": true,
+      "expected": [
+        1,
+        2,
+        3,
+        42,
+        99,
+        123,
+        2026,
+        9001
+      ],
+      "actual": [
+        1,
+        2,
+        3,
+        42,
+        99,
+        123,
+        2026,
+        9001
+      ]
+    },
+    {
+      "name": "all order classes covered",
+      "passed": true,
+      "expected": [
+        "complex",
+        "medium",
+        "simple"
+      ],
+      "actual": [
+        "complex",
+        "medium",
+        "simple"
+      ]
+    },
+    {
+      "name": "aggregate means recompute from raw matrix",
+      "passed": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "objective rankings are non-empty",
+      "passed": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "pareto frontier exists",
+      "passed": true,
+      "expected": "frontier policies > 0",
+      "actual": 8
+    },
+    {
+      "name": "detected findings are distinct from latent risk on at least one run",
+      "passed": true,
+      "expected": "detectedOverclaimFindings is not treated as latentRiskEstimate",
+      "actual": "distinct"
+    }
+  ],
+  "verdict": "PASS"
+}

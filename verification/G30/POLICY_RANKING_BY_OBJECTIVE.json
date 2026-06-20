@@ -1,0 +1,372 @@
+{
+  "speed": [
+    {
+      "policyId": "speed_flat_like",
+      "rank": 1,
+      "score": -3,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_worker",
+      "rank": 2,
+      "score": -13.33,
+      "runCount": 24
+    },
+    {
+      "policyId": "handoff_optimized",
+      "rank": 3,
+      "score": -13.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "balanced_org",
+      "rank": 4,
+      "score": -14,
+      "runCount": 24
+    },
+    {
+      "policyId": "high_fanout",
+      "rank": 5,
+      "score": -14.33,
+      "runCount": 24
+    },
+    {
+      "policyId": "baseline_hierarchical",
+      "rank": 6,
+      "score": -14.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "low_coordination",
+      "rank": 7,
+      "score": -14.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "merge_optimized",
+      "rank": 8,
+      "score": -14.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "quality_hierarchy",
+      "rank": 9,
+      "score": -14.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "audit_heavy",
+      "rank": 10,
+      "score": -15.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_lead",
+      "rank": 11,
+      "score": -15.67,
+      "runCount": 24
+    },
+    {
+      "policyId": "risk_averse_org",
+      "rank": 12,
+      "score": -15.67,
+      "runCount": 24
+    }
+  ],
+  "quality": [
+    {
+      "policyId": "merge_optimized",
+      "rank": 1,
+      "score": 12.36,
+      "runCount": 24
+    },
+    {
+      "policyId": "quality_hierarchy",
+      "rank": 2,
+      "score": 12.21,
+      "runCount": 24
+    },
+    {
+      "policyId": "risk_averse_org",
+      "rank": 3,
+      "score": 12.02,
+      "runCount": 24
+    },
+    {
+      "policyId": "balanced_org",
+      "rank": 4,
+      "score": 11.92,
+      "runCount": 24
+    },
+    {
+      "policyId": "audit_heavy",
+      "rank": 5,
+      "score": 11.75,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_lead",
+      "rank": 6,
+      "score": 11.66,
+      "runCount": 24
+    },
+    {
+      "policyId": "high_fanout",
+      "rank": 7,
+      "score": 11.65,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_worker",
+      "rank": 8,
+      "score": 11.52,
+      "runCount": 24
+    },
+    {
+      "policyId": "handoff_optimized",
+      "rank": 9,
+      "score": 11.36,
+      "runCount": 24
+    },
+    {
+      "policyId": "low_coordination",
+      "rank": 10,
+      "score": 11.26,
+      "runCount": 24
+    },
+    {
+      "policyId": "baseline_hierarchical",
+      "rank": 11,
+      "score": 11.09,
+      "runCount": 24
+    },
+    {
+      "policyId": "speed_flat_like",
+      "rank": 12,
+      "score": 10.23,
+      "runCount": 24
+    }
+  ],
+  "risk_reduction": [
+    {
+      "policyId": "speed_flat_like",
+      "rank": 1,
+      "score": -3.38,
+      "runCount": 24
+    },
+    {
+      "policyId": "risk_averse_org",
+      "rank": 2,
+      "score": -4.99,
+      "runCount": 24
+    },
+    {
+      "policyId": "audit_heavy",
+      "rank": 3,
+      "score": -5.46,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_lead",
+      "rank": 4,
+      "score": -7.09,
+      "runCount": 24
+    },
+    {
+      "policyId": "balanced_org",
+      "rank": 5,
+      "score": -7.22,
+      "runCount": 24
+    },
+    {
+      "policyId": "handoff_optimized",
+      "rank": 6,
+      "score": -8.33,
+      "runCount": 24
+    },
+    {
+      "policyId": "quality_hierarchy",
+      "rank": 7,
+      "score": -8.4,
+      "runCount": 24
+    },
+    {
+      "policyId": "merge_optimized",
+      "rank": 8,
+      "score": -8.47,
+      "runCount": 24
+    },
+    {
+      "policyId": "baseline_hierarchical",
+      "rank": 9,
+      "score": -9.19,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_worker",
+      "rank": 10,
+      "score": -9.22,
+      "runCount": 24
+    },
+    {
+      "policyId": "low_coordination",
+      "rank": 11,
+      "score": -9.48,
+      "runCount": 24
+    },
+    {
+      "policyId": "high_fanout",
+      "rank": 12,
+      "score": -9.98,
+      "runCount": 24
+    }
+  ],
+  "coordination_efficiency": [
+    {
+      "policyId": "speed_flat_like",
+      "rank": 1,
+      "score": 3.87,
+      "runCount": 24
+    },
+    {
+      "policyId": "handoff_optimized",
+      "rank": 2,
+      "score": 0.16,
+      "runCount": 24
+    },
+    {
+      "policyId": "low_coordination",
+      "rank": 3,
+      "score": 0.15,
+      "runCount": 24
+    },
+    {
+      "policyId": "audit_heavy",
+      "rank": 4,
+      "score": 0.12,
+      "runCount": 24
+    },
+    {
+      "policyId": "balanced_org",
+      "rank": 5,
+      "score": 0.12,
+      "runCount": 24
+    },
+    {
+      "policyId": "merge_optimized",
+      "rank": 6,
+      "score": 0.12,
+      "runCount": 24
+    },
+    {
+      "policyId": "quality_hierarchy",
+      "rank": 7,
+      "score": 0.12,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_lead",
+      "rank": 8,
+      "score": 0.11,
+      "runCount": 24
+    },
+    {
+      "policyId": "risk_averse_org",
+      "rank": 9,
+      "score": 0.11,
+      "runCount": 24
+    },
+    {
+      "policyId": "baseline_hierarchical",
+      "rank": 10,
+      "score": 0.1,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_worker",
+      "rank": 11,
+      "score": 0.09,
+      "runCount": 24
+    },
+    {
+      "policyId": "high_fanout",
+      "rank": 12,
+      "score": 0.07,
+      "runCount": 24
+    }
+  ],
+  "balanced": [
+    {
+      "policyId": "speed_flat_like",
+      "rank": 1,
+      "score": 6.97,
+      "runCount": 24
+    },
+    {
+      "policyId": "risk_averse_org",
+      "rank": 2,
+      "score": 4.5,
+      "runCount": 24
+    },
+    {
+      "policyId": "audit_heavy",
+      "rank": 3,
+      "score": 4.28,
+      "runCount": 24
+    },
+    {
+      "policyId": "balanced_org",
+      "rank": 4,
+      "score": 4.07,
+      "runCount": 24
+    },
+    {
+      "policyId": "merge_optimized",
+      "rank": 5,
+      "score": 3.89,
+      "runCount": 24
+    },
+    {
+      "policyId": "handoff_optimized",
+      "rank": 6,
+      "score": 3.71,
+      "runCount": 24
+    },
+    {
+      "policyId": "quality_hierarchy",
+      "rank": 7,
+      "score": 3.7,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_lead",
+      "rank": 8,
+      "score": 3.53,
+      "runCount": 24
+    },
+    {
+      "policyId": "low_coordination",
+      "rank": 9,
+      "score": 3.08,
+      "runCount": 24
+    },
+    {
+      "policyId": "extra_worker",
+      "rank": 10,
+      "score": 2.86,
+      "runCount": 24
+    },
+    {
+      "policyId": "baseline_hierarchical",
+      "rank": 11,
+      "score": 2.57,
+      "runCount": 24
+    },
+    {
+      "policyId": "high_fanout",
+      "rank": 12,
+      "score": 2.18,
+      "runCount": 24
+    }
+  ]
+}

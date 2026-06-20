@@ -19,6 +19,10 @@
 - G29 organization study UI has been implemented as a read-only Research tab over compact local G27/G28 summary data.
 - G29 Research Dashboard shows deterministic study results, G27 flat-vs-hierarchy summary, G28 intervention ranking, delta metrics, complexity highlights, risk semantics, and non-claims.
 - G29 validation passed locally: focused G29 tests (2 files, 8 passed), `npm run test` (49 files, 397 passed, 12 skipped), `npx tsc -b`, and `npx vite build --base=/agent-factory/` with the existing chunk-size warning.
+- G30 organization policy search has been implemented as a deterministic research runner over 12 curated organization policies.
+- G30 matrix shape is `12 policies x 8 seeds x 3 representative orders = 288 runs`.
+- G30 artifacts include raw policy matrix, policy aggregates, objective rankings, order complexity breakdown, Pareto frontier, aggregate recompute check, search-space documentation, scoring-policy documentation, baseline linkage, sensitivity report, non-claims, test output, and build output.
+- G30 validation passed locally: focused G30 tests (2 files, 13 passed), `npm run test` (51 files, 410 passed, 12 skipped), `npx tsc -b`, and `npx vite build --base=/agent-factory/` with the existing chunk-size warning.
 
 ## Open Risks
 
@@ -27,4 +31,7 @@
 - G28 does not claim any intervention is better for real organizations.
 - G29 is a static summary UI; it does not expose raw G27/G28 matrix downloads and does not generate new study runs.
 - G29 does not claim real-world organization validity, real AI-agent capability, Runtime Lab validation, or production governance readiness.
+- G30 searches a curated deterministic policy set, not an exhaustive organization-design space.
+- G30 reports objective-specific rankings and Pareto frontier; it does not claim a single best real-world organization policy.
+- G30 does not update the G29 Research UI; a future G31 can add policy search visualization.
 - The Vite build still reports the existing chunk-size warning for the main bundle.

@@ -1,0 +1,169 @@
+{
+  "source": "verification/G30/ORG_POLICY_SEARCH_MATRIX.json",
+  "policyScores": [
+    {
+      "id": "baseline_hierarchical",
+      "scores": {
+        "qualityScore": 11.09,
+        "riskReductionScore": -9.19,
+        "speedScore": -14.67,
+        "coordinationEfficiencyScore": 0.1
+      }
+    },
+    {
+      "id": "speed_flat_like",
+      "scores": {
+        "qualityScore": 10.23,
+        "riskReductionScore": -3.38,
+        "speedScore": -3,
+        "coordinationEfficiencyScore": 3.87
+      }
+    },
+    {
+      "id": "quality_hierarchy",
+      "scores": {
+        "qualityScore": 12.21,
+        "riskReductionScore": -8.4,
+        "speedScore": -14.67,
+        "coordinationEfficiencyScore": 0.12
+      }
+    },
+    {
+      "id": "audit_heavy",
+      "scores": {
+        "qualityScore": 11.75,
+        "riskReductionScore": -5.46,
+        "speedScore": -15.67,
+        "coordinationEfficiencyScore": 0.12
+      }
+    },
+    {
+      "id": "handoff_optimized",
+      "scores": {
+        "qualityScore": 11.36,
+        "riskReductionScore": -8.33,
+        "speedScore": -13.67,
+        "coordinationEfficiencyScore": 0.16
+      }
+    },
+    {
+      "id": "merge_optimized",
+      "scores": {
+        "qualityScore": 12.36,
+        "riskReductionScore": -8.47,
+        "speedScore": -14.67,
+        "coordinationEfficiencyScore": 0.12
+      }
+    },
+    {
+      "id": "low_coordination",
+      "scores": {
+        "qualityScore": 11.26,
+        "riskReductionScore": -9.48,
+        "speedScore": -14.67,
+        "coordinationEfficiencyScore": 0.15
+      }
+    },
+    {
+      "id": "high_fanout",
+      "scores": {
+        "qualityScore": 11.65,
+        "riskReductionScore": -9.98,
+        "speedScore": -14.33,
+        "coordinationEfficiencyScore": 0.07
+      }
+    },
+    {
+      "id": "extra_worker",
+      "scores": {
+        "qualityScore": 11.52,
+        "riskReductionScore": -9.22,
+        "speedScore": -13.33,
+        "coordinationEfficiencyScore": 0.09
+      }
+    },
+    {
+      "id": "extra_lead",
+      "scores": {
+        "qualityScore": 11.66,
+        "riskReductionScore": -7.09,
+        "speedScore": -15.67,
+        "coordinationEfficiencyScore": 0.11
+      }
+    },
+    {
+      "id": "balanced_org",
+      "scores": {
+        "qualityScore": 11.92,
+        "riskReductionScore": -7.22,
+        "speedScore": -14,
+        "coordinationEfficiencyScore": 0.12
+      }
+    },
+    {
+      "id": "risk_averse_org",
+      "scores": {
+        "qualityScore": 12.02,
+        "riskReductionScore": -4.99,
+        "speedScore": -15.67,
+        "coordinationEfficiencyScore": 0.11
+      }
+    }
+  ],
+  "frontierPolicyIds": [
+    "speed_flat_like",
+    "quality_hierarchy",
+    "audit_heavy",
+    "handoff_optimized",
+    "merge_optimized",
+    "extra_worker",
+    "balanced_org",
+    "risk_averse_org"
+  ],
+  "dominatedPolicyIds": [
+    "baseline_hierarchical",
+    "low_coordination",
+    "high_fanout",
+    "extra_lead"
+  ],
+  "dominancePairs": [
+    {
+      "dominatorPolicyId": "quality_hierarchy",
+      "dominatedPolicyId": "baseline_hierarchical"
+    },
+    {
+      "dominatorPolicyId": "handoff_optimized",
+      "dominatedPolicyId": "baseline_hierarchical"
+    },
+    {
+      "dominatorPolicyId": "merge_optimized",
+      "dominatedPolicyId": "baseline_hierarchical"
+    },
+    {
+      "dominatorPolicyId": "balanced_org",
+      "dominatedPolicyId": "baseline_hierarchical"
+    },
+    {
+      "dominatorPolicyId": "handoff_optimized",
+      "dominatedPolicyId": "low_coordination"
+    },
+    {
+      "dominatorPolicyId": "balanced_org",
+      "dominatedPolicyId": "high_fanout"
+    },
+    {
+      "dominatorPolicyId": "audit_heavy",
+      "dominatedPolicyId": "extra_lead"
+    },
+    {
+      "dominatorPolicyId": "risk_averse_org",
+      "dominatedPolicyId": "extra_lead"
+    }
+  ],
+  "objectiveDimensions": [
+    "qualityScore",
+    "riskReductionScore",
+    "speedScore",
+    "coordinationEfficiencyScore"
+  ]
+}

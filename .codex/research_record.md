@@ -67,3 +67,25 @@
 - Hygiene result before staging: PASS, but untracked `tests/data` and `verification/G29` directories were skipped as directories.
 - Staged hygiene command: `~/.codex/bin/codex_preclose_hygiene.sh . --mode fast`.
 - Staged hygiene result: PASS with no skipped paths; scanned G29 source, tests, evidence artifacts, and `.codex` records.
+
+## 2026-06-20 15:40:51 CST
+
+- Task: implement `G30_ORG_POLICY_SEARCH`.
+- Scope inspected: G27/G28 organization study code, `src/data/orgStudyOrders.ts`, `src/data/orgInterventions.ts`, `src/sim/orgInterventionStudy.ts`, `src/sim/orgMultiSeedStudy.ts`, `src/sim/orgStudyArtifactSeal.ts`, G28 artifact generator, G28 tests, G29 evidence records, and local repository guidance.
+- Project memory recall: no matching graph-memory events were returned for G27-S1 through G29, so local `.codex` records and repository artifacts were used as the verified evidence source.
+- Work contract: deterministic policy search runner only; no UI, no new real LLM agents, no Ollama, no Runtime Lab, no main gameplay pipeline change, no public demo gameplay behavior change, and no real-world organization conclusion.
+- TDD evidence: focused G30 tests were written first and initially failed because `src/data/orgPolicyConfigs.ts`, `src/sim/orgPolicySearch.ts`, and `src/sim/paretoFrontier.ts` did not exist.
+- Added policy definitions: `src/data/orgPolicyConfigs.ts` with 12 curated policies and 5 scoring objectives.
+- Added Pareto logic: `src/sim/paretoFrontier.ts` with dominance and frontier computation.
+- Added policy search runner: `src/sim/orgPolicySearch.ts`, producing a 288-run matrix and derived aggregate/ranking/Pareto artifacts.
+- Added generator: `scripts/generateG30Artifacts.ts`.
+- Added tests: `tests/sim/orgPolicySearch.test.ts` and `tests/sim/paretoFrontier.test.ts`.
+- Generated artifacts: `ORG_POLICY_SEARCH_MATRIX.json`, `POLICY_AGGREGATES.json`, `PARETO_FRONTIER.json`, `POLICY_RANKING_BY_OBJECTIVE.json`, `POLICY_BY_ORDER_COMPLEXITY.json`, `AGGREGATE_RECOMPUTE_CHECK.json`, `G30_ORG_POLICY_SEARCH.md`, `POLICY_SENSITIVITY_REPORT.md`, `SEARCH_SPACE.md`, `SCORING_POLICY.md`, `BASELINE_LINKAGE_TO_G28.md`, `NON_CLAIMS.md`, `TEST_OUTPUT.txt`, and `BUILD_OUTPUT.txt`.
+- Artifact evidence: `ORG_POLICY_SEARCH_MATRIX.json` has 288 runs, 12 policies, 8 seeds, 3 order classes, 5 objectives, and `AGGREGATE_RECOMPUTE_CHECK.json` reports PASS.
+- Validation: focused G30 tests PASS with 2 test files and 13 tests; `npm run test` PASS with 51 test files passed, 410 tests passed, 12 skipped; `npx tsc -b` PASS; `npx vite build --base=/agent-factory/` PASS with the existing chunk-size warning.
+- G30 runtime/source boundary scan: PASS; no `fetch(`, `AGENT_FOUNDRY_ENABLE_OLLAMA`, AI import, or `ollama` reference in `src/data/orgPolicyConfigs.ts`, `src/sim/orgPolicySearch.ts`, or `src/sim/paretoFrontier.ts`; the artifact generator has no `fetch(` or Ollama environment switch.
+- Non-claims preserved: deterministic simulator policy search only; no single best real-world organization policy, no real AI agents, no Runtime Lab validation, no public demo gameplay change, and detected overclaim findings remain a detection metric.
+- Hygiene command before staging: `~/.codex/bin/codex_preclose_hygiene.sh . --mode fast`.
+- Hygiene result before staging: PASS, but untracked `verification/G30` was skipped as a directory.
+- Staged hygiene command: `~/.codex/bin/codex_preclose_hygiene.sh . --mode fast`.
+- Staged hygiene result: PASS with no skipped paths; scanned G30 source, tests, generator, evidence artifacts, and `.codex` records.
